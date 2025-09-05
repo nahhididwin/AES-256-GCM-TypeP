@@ -1,0 +1,1 @@
+replace getpass() to input()
