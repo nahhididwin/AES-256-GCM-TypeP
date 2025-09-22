@@ -52,7 +52,7 @@ def encrypt(password: str, plaintext: str) -> str:
         print("\nEncrypt Thành Công.")
         return json_string
 
-    except Exception as e:
+    except Exception as e: # có bug trong khối try thì notice  :
         print(f"\nĐã có bug: {e}")
         return None
 
@@ -81,11 +81,11 @@ def decrypt(password: str, encrypted_json_string: str) -> str:
         print("\nDecrypt Thành Công.")
         return plaintext
 
-    except (ValueError, KeyError) as e:
+    except (ValueError, KeyError) as e: # yea có bug trog khối try thì...
         # bug xảy ra khi dữ liệu lỗi hoặc pass có vấn đề
         print("\nBug Decrypt: Mật khẩu không đúng hoặc dữ liệu đã bị thay đổi!")
         return None
-    except Exception as e:
+    except Exception as e: # cs bug trog try thì ...
         print(f"\nĐã có Bug: {e}")
         return None
 
@@ -107,7 +107,7 @@ if __name__ == '__main__':
                 print(encrypted_output)
                 print("---------------------------\n")
 
-        elif choice == '2':
+        elif choice == '2': # yea elif tiện hơn thật
             password = input("Nhập mật khẩu để GIẢI MÃ : ")
             encrypted_input = input("Dán toàn bộ dữ liệu đã mã hóa vào đây: ")
             if not password or not encrypted_input:
